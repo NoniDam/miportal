@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Cuadrados JS</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1>Portal de Programas</h1>
+    <nav>
+      <a href="calculadora.html" class="btn rojo">🧮 CALCULADORA</a>
+      <a href="nomina.html" class="btn azul">👥 EMPLEADOS</a>
+      <a href="cuadrado.html  " class="btn celeste">⬛ CUADRADO</a>
+      <a href="index.html" class="btn verde">🏠 INICIO</a>
+    </nav>
+  </header>
+
+  <!-- Contenedor de la calculadora -->
+  <main class="container">
+    <h2>Calculadora de Cuadrados</h2>
+    <form>
+      <label for="num1">Número:</label>
+      <input type="text" id="num1" name="num1" placeholder="Ingrese un número">
+
+      <label for="resultado">Resultado:</label>
+      <input type="text" id="resultado" name="resultado" placeholder="Resultado" readonly>
+
+      <div class="botones">
+        <button type="button" onclick="cuadrado()">Imprimir Cuadrado</button>
+        <button type="reset" class="limpiar">Limpiar</button>
+        <button type="button" class="back" onclick="location.href='index.html'">Volver</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    function cuadrado() {
+      let num1 = document.getElementById("num1").value;
+      if (isNaN(num1) || num1 === "") {
+        alert("Ingrese un número válido");
+        return;
+      }
+      let resultado = num1 * num1;
+      document.getElementById("resultado").value = resultado;
+    }
+  </script>
+</body>
+</html>
